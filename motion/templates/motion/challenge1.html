@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}Challenge 1{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Challenge 1: Projectile Motion (Drag-Free)</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+    {% if image_base64 %}
+        <h2>Trajectory Plot</h2>
+        <img src="data:image/png;base64,{{ image_base64 }}" alt="Trajectory Plot" class="img-fluid">
+    {% elif error %}
+        <div class="alert alert-danger" role="alert">
+            Error: {{ error }}
+        </div>
+    {% endif %}
+</div>
+{% endblock %}

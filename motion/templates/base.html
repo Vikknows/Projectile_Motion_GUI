@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Projectile Motion{% endblock %}</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    {% load static %}
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet">
+    <style>
+        @keyframes swirl {
+            0% {
+                background-position: 0% 0%;
+            }
+            100% {
+                background-position: 100% 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div style="
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, 
+        #000000, /* Black */
+        #00008B, /* Dark Blue */
+        #800080, /* Purple */
+        #FFD700, /* Gold */
+        #3a3a3a, /* Dark Gray */
+        #000000  /* Black again */
+    );
+    background-size: 200% 200%;
+    animation: swirl 20s linear infinite;
+    z-index: -1;
+"></div>
+    <div class="container-fluid">
+        <div class="row">
+            <nav class="navbar navbar-expand-md navbar-light bg-light col-md-12">
+                <a class="navbar-brand" href="{% url 'challenge1_view' %}">Projectile Motion</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'challenge1_view' %}">Challenge 1</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'challenge2_view' %}">Challenge 2</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'challenge3_view' %}">Challenge 3</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'challenge4_view' %}">Challenge 4</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'challenge5_view' %}">Challenge 5</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'challenge6_view' %}">Challenge 6</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'challenge7_view' %}">Challenge 7</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'challenge8_view' %}">Challenge 8</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'challenge9_view' %}">Challenge 9</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'extension1_view' %}">Extension 1</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'extension2_view' %}">Extension 2</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <main class="col-md-12 px-md-4">
+                {% block content %}{% endblock %}
+            </main>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
